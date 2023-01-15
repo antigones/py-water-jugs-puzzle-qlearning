@@ -7,14 +7,14 @@ def main():
 
     jugs = [Jug('Jug1', 8, 8), Jug('Jug2', 5, 0), Jug('Jug3', 3, 0)]
     actions = itertools.permutations(range(len(jugs)), 2)
-    wcg_arena = WaterInJugsQLearning(
+    wj_arena = WaterInJugsQLearning(
         start_state=jugs,
         actions=actions,
         goal_qty=4,
         gamma=0.8,
         max_episodes=1000,
         epsilon_greedy=True)
-    solution_steps, scores, eps_list = wcg_arena.train()
+    solution_steps, scores, eps_list = wj_arena.train()
 
     print('*** SOLUTION ***')
     for step in solution_steps:
